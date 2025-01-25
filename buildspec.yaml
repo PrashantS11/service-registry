@@ -9,7 +9,7 @@ phases:
       - REPOSITORY_URI=676206944216.dkr.ecr.ap-south-1.amazonaws.com/prashant
       - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin $REPOSITORY_URI
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
-      - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
+      - IMAGE_TAG=service-registry
   build:
     commands:
       - echo Build started on `date`
@@ -35,4 +35,4 @@ phases:
 artifacts:
   files:
     - imagedefinitions.json
-    - target/course-service.jar
+    - target/service-registry.jar
