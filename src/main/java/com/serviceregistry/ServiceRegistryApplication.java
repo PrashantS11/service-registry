@@ -16,6 +16,7 @@ public class ServiceRegistryApplication {
 
 		log.info("ServiceRegistryApplication starting... ");
 		SpringApplication.run(ServiceRegistryApplication.class, args);
+		log.info("ServiceRegistryApplication starting... ");
 	}
 
 }
